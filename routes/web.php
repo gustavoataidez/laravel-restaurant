@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/pizza', function () {
+    //return view('pizza');
+    $type = ['name' => 'hawaii','flavor' => 'saldy'];
+    return view('pizza', $type);
+});
