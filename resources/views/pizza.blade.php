@@ -1,13 +1,14 @@
 @extends('layouts/layout')
 
 @section('container')
+
 <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
 
-    <div class="max-w-7xl mx-auto p-6 lg:p-8">
-        <h1 class="flex justify-center mt-6 text-xl font-semibold text-gray-900 dark:text-white">Pizza</h1>
-        <p class="flex justify-center mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed"></p>
+    <div class="max-w-7xl mx-auto p-6 lg:p-8 mt-6 text-xl font-semibold text-gray-900 dark:text-white">
+        <h1>Test connexion</h1>
+        <p>My name is {{ $name }} and I have {{ $age }} years old. <br>Your order was a {{ $order }}:</p>
         @foreach($types as $type)
-        <h3>{{ $type['name'] }} - {{ $type['flavor'] }}</h3>
+        <p>A {{$order}} {{ $type['name'] }} - {{ $type['flavor'] }} <br>Ammount: {{ $type['price'] }}</p>
         @endforeach
 
         <div class="mt-16">

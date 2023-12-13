@@ -23,5 +23,11 @@ Route::get('/pizza', function () {
     ['name' => 'hawaii','flavor' => 'saldy','price' => 15],
     ['name' => 'chicken', 'flavor' => 'saldy', 'price' => 26],
     ['name' => 'other', 'flavor' => 'saldy', 'price' => 20]];
-    return view('pizza', ['types' => $type]);
+
+    return view('pizza', [
+        'types' => $type, 
+        'name' => request('name'),
+        'age' => request('age'),
+        'order' => request('order')
+    ]);
 });
