@@ -19,15 +19,16 @@ Route::get('/', function () {
 
 Route::get('/pizza', function () {
     //return view('pizza');
-    $type = [
+    $pizza = [
     ['name' => 'hawaii','flavor' => 'saldy','price' => 15],
     ['name' => 'chicken', 'flavor' => 'saldy', 'price' => 26],
     ['name' => 'other', 'flavor' => 'saldy', 'price' => 20]];
 
     return view('pizza', [
-        'types' => $type, 
-        'name' => request('name'),
-        'age' => request('age'),
-        'order' => request('order')
+        'pizza' => $pizza
     ]);
+});
+
+Route::get('/pizza/{id}', function($id){
+    return view('details', ['id' => $id]);
 });
